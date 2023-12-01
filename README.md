@@ -61,11 +61,11 @@ Open the systemd service file:
     sudo nano /etc/systemd/system/nextjs-app.service    
 
 Note:   
-If you don't know your username, type this command in the terminal:
+If you don't know YOUR_USER_NAME, type this command in the terminal:
 
     whoami  
 
-If you don't know your group name, type this command in the terminal:
+If you don't know YOUR_GROUP_NAME, type this command in the terminal:
 
     id -gn  
 
@@ -76,10 +76,10 @@ Update the content of the file to the following:
     After=network.target
 
     [Service]
-    WorkingDirectory=/home/rohith/Code/ubuntu-next-app  
-    ExecStart=/bin/bash -lc 'source /home/rohith/.nvm/nvm.sh && cd /home/rohith/Code/ubuntu-next-app && nvm use v20.10.0 && npm run dev'
-    User=rohith
-    Group=rohith
+    WorkingDirectory=/home/YOUR_USER_NAME/path/ubuntu-next-app  
+    ExecStart=/bin/bash -lc 'source /home/YOUR_GROUP_NAME/.nvm/nvm.sh && cd /home/ YOUR_GROUP_NAME/path/ubuntu-next-app && nvm use v20.10.0 && npm run dev'
+    User=YOUR_USER_NAME
+    Group= YOUR_GROUP_NAME
 
     [Install]    
     WantedBy=multi-user.target  
@@ -104,13 +104,13 @@ Reload the systemd daemon, restart the service, and check the status:
         sudo nano /etc/systemd/system/tunnel.service  
 
 Note:    
-If you don't know your username, type this command in the terminal:
+If you don't know YOUR_USER_NAME, type this command in the terminal:
 
     whoami  
 
-If you don't know your group name, type this command in the terminal:   
+If you don't know YOUR_GROUP_NAME, type this command in the terminal:
 
-    id -gn
+    id -gn 
 
 Add the following content:  
 
@@ -121,8 +121,8 @@ Add the following content:
         [Service]    
         WorkingDirectory=/home/YOUR_USER_NAME/  
         ExecStart=/bin/bash -lc './loophole http 3000'
-        User=rohith 
-        Group=rohith
+        User=YOUR_USER_NAME
+        Group=YOUR_GROUP_NAME
 
         [Install]  
         WantedBy=default.target  

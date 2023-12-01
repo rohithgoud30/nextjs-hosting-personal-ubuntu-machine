@@ -1,0 +1,1 @@
+# nextjs-hosting-personal-ubuntu-machine
